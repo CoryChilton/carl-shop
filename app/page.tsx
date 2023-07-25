@@ -9,7 +9,7 @@ const carouselImages = ['lightningMcDean2.png', 'playerSafety2.png', 'vegasJerse
 export default function Home() {
   return (
     <main>
-      <Image src="/images/lineup.jpg" width={2000} height={1000} alt="Lineup" className="w-full"/>
+      <Image src="/images/lineup.jpg" priority={true} width={2000} height={1000} alt="Lineup" className="w-full"/>
       <Carousel images={carouselImages}/>
     </main>
   );
