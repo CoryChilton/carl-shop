@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -16,6 +17,7 @@ export default function Footer() {
           <FooterBreakLine />
           <ul className="font-light">
             <li>About us</li> <FooterDivLine />
+            <li> <Link href="https://californiaround.net/blog" target="_blank">Blog</Link></li> <FooterDivLine />
             <li>Contact Us</li> <FooterDivLine />
             <li>Size Guide</li> <FooterDivLine />
             <li>FAQs</li>
