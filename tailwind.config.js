@@ -6,7 +6,17 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-200%)' }
+        },
+      },
+      animation: {
+        carousel: 'marquee 120s linear infinite',
+      }
+    },
   },
   plugins: [],
 }

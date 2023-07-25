@@ -21,7 +21,7 @@ export default function Navbar() {
       </div>
       <div className="flex-none flex gap-x-0 md:gap-x-6 mr-8 items-center">
         <NavButton href="/">Login</NavButton>
-        <button className="ml-1 flex-none hover:bg-gray-100 rounded-full p-3 ease-in duration-100 block md:hidden">
+        <button className="ml-1 flex-none hover:bg-gray-100 rounded-full p-3 ease-in-out duration-100 block md:hidden">
           <Image src="/images/search.png" width={18} height={10} alt="search"/>
         </button>
         <button className="hover:bg-gray-100 rounded-full ease-in duration-100 p-3">
