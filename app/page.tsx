@@ -1,15 +1,13 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { items } from '../items/items'
+import Image from 'next/image';
+import Link from 'next/link';
+import { items } from '../items/items';
 
 export default function Home() {
   return (
     <main>
-      <section className="font-sans">
-        <h1>CARL Store</h1>
-        <p>Welcome to the official merchandise store of the California Roundnet Legion!</p>
-      </section>
-      <section className='items'>
+      <Image src="/images/lineup.jpg" width={2000} height={1000} alt="Lineup" className="w-full"/>
+      
+      <section>
         <br></br>
         {items.map(( {name, price, quantity, description, imagePath} ) => 
           <div key={name}>

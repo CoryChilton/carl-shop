@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   background-color: rgb(118, 118, 118);
   color: white;
   margin: 20px;
-}
+} */
 
 /* :root {
   --foreground-rgb: 0, 0, 0;
