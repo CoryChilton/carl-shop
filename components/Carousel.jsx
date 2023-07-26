@@ -8,7 +8,7 @@ export default function Carousel({items}) {
         {[...items, ...items, ...items, ...items].map(item => (
           <Link key={item.carouselImagePath} href={`/${item.id}`} className="flex-none w-2/3 md:w-1/2 lg:w-1/3 bg-blue-200 flex relative justify-center items-center rounded-xl">
             <div className="">
-              <img src={item.carouselImagePath} alt="image" className="h-72 hover:h-80 ease-in-out duration-100"/>
+              <img src={item.carouselImagePath} alt="image" className="h-72 hover:h-80 active:h-72 ease-in-out duration-100"/>
             </div>
             <div className="absolute bottom-1 left-1 border border-black rounded-full pl-2 pr-1 py-1 bg-blue-200">
               <div className="inline-block font-light">
