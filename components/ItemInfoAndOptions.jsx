@@ -8,17 +8,21 @@ export default function ItemInfoAndOptions({item}) {
   let total = item.price * quantity;
 
   return (
-    <>
-      <h1>{item.name} {item.type}</h1>
-      <h2>{item.description}</h2>
+    <div className="md:w-2/5">
+      <h1 className="text-3xl font-semibold mb-4">{item.name} {item.type}</h1>
+      <h2 className="text-lg mb-4">{item.description}</h2>
+      <h3 className="text-lg font-semibold mb-4">Price: ${item.price}.00</h3>
       <SizeSelect />
-      <h3>Price: ${item.price}.00</h3>
-
-      <QuantitySelect onIncrease={() => setQuantity(quantity+1)} onDecrease={() => quantity > 0 && setQuantity(quantity-1)} quantity={quantity} />
-
-      <h3>Total: ${total}.00</h3>
-      <button className="block">Add to Cart</button>
-      <button className="block">Buy Now</button>
-    </>
+      <QuantitySelect onIncrease={() => setQuantity(quantity+1)} onDecrease={() => quantity > 1 && setQuantity(quantity-1)} quantity={quantity} />
+      <h3 className="text-2xl font-semibold flex justify-between bg-gray-100 mb-4 items-center p-2 border-t border-gray-400">
+        <div className="text-xl">
+          Total:
+        </div>
+        <div className="text-red-500">
+          ${total}.00
+        </div>
+      </h3>
+      <button className="block bg-red-700 text-white font-bold w-full h-14 hover:bg-black active:bg-red-950 ease-in duration-200">ADD TO CART</button>
+    </div>
   )
 }

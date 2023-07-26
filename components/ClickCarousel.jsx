@@ -26,16 +26,24 @@ export default function ClickCarousel ( {images} ) {
   let image = images[index];
 
   return (
-    <div className="w-1/3 relative flex justify-center">
-      <div className="h-96 flex items-center">
-        <img src={image} alt="image" className="max-h-full" />
+    <div className="md:w-3/5 relative flex justify-center h-[30rem]">
+      <div className="h-[30rem] flex items-center">
+        <img src={image} alt="image" className="max-h-full rounded" />
       </div>
-      <button onClick={handlePrevClick} className="opacity-50 hover:opacity-70 absolute left-0 bottom-44">
-        <Image src={'/images/next.png'} width={50} height={50} className="rotate-180" />
-      </button>
-      <button onClick={handleNextClick} className="opacity-50 hover:opacity-70 absolute right-0 bottom-44">
-        <Image src={'/images/next.png'} width={50} height={50}/>
-      </button>
+      <div className="absolute left-0 w-1/2 h-full flex items-center">
+        <button onClick={handlePrevClick} className="opacity-50 hover:opacity-70">
+          <div className="bg-gray-500 rounded-full pr-1 py-0.5">
+            <Image src={'/images/next.png'} width={50} height={50} className="rotate-180" />
+          </div>
+        </button>
+      </div>
+      <div className="absolute right-0 w-1/2 h-full flex items-center justify-end">
+        <button onClick={handleNextClick} className="opacity-50 hover:opacity-70">
+          <div className="bg-gray-500 rounded-full pl-1 py-0.5">
+            <Image src={'/images/next.png'} width={50} height={50}/>
+          </div>
+        </button>
+      </div>
     </div>
   );
 }

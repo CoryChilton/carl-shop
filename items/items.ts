@@ -2,7 +2,7 @@ export const items = new Map([
   ["1", {
     id: "1",
     name: 'Player Safety',
-    type: 'Shirt',
+    type: 'T-Shirt',
     price: 30,
     quantity: 3,
     description: 'The first official CARL observer hand signal. Keep the players safe!',
@@ -22,7 +22,7 @@ export const items = new Map([
   ["3", {
     id: "3",
     name: 'Irritable Ball Shmackers',
-    type: 'Shirt',
+    type: 'T-Shirt',
     price: 50,
     quantity: 2,
     description: 'Don\'t let gastrointestinal issues slow you down, let the people know you can shmack the spikeball despite your terminal genetic ailments.',
@@ -37,7 +37,7 @@ export const items = new Map([
     quantity: 0,
     description: 'The original CARL jersey, first worn by CARL\'s members at the 2023 Vegas Program Playoffs.',
     carouselImagePath: '/images/carousel/vegasJersey1.png',
-    imagePaths: ['/images/items/vegasJersey1.png', '/images/items/vegasJersey2.png', '/images/items/vegasJersey3.jpg']
+    imagePaths: ['/images/items/vegasJersey1.png', '/images/items/vegasJersey2.png', '/images/items/vegasJersey3.jpg', '/images/lineup.jpg', '/images/lineup2.jpg']
   }]
 ]);
 

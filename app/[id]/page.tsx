@@ -12,7 +12,7 @@ export default function Page({params}: pageProps) {
 
   if (item !== undefined) {
     return (
-      <main className="mb-8">
+      <main className="mb-14 mt-2 flex flex-col md:flex-row mx-10 md:mx-20 gap-8">
         <ClickCarousel images={item.imagePaths} />
         <ItemInfoAndOptions item={item} />
       </main>
