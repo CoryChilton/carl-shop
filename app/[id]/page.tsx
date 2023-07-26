@@ -1,6 +1,6 @@
 import { items } from '../../items/items';
-import ClickCarousel from '../../components/ClickCarousel';
-import ItemInfoAndOptions from '../../components/ItemInfoAndOptions';
+import ClickCarousel from '../../components/itemPage/ClickCarousel';
+import ItemInfoAndOptions from '../../components/itemPage/ItemInfoAndOptions';
 
 interface pageProps{
   params: {id: string}
