@@ -35,7 +35,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="text-gray-600 text-center font-semibold text-sm pb-4">&#9787; 2023 CARL Official. CARL rights reserved.</div>
+      <div className="text-gray-600 text-center font-semibold text-sm pb-4">Clothing designs by The Podiatrist.<br/> &#9787; 2023 CARL Official. CARL rights reserved.</div>
     </div>
   );
 }

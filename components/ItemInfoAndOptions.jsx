@@ -9,7 +9,7 @@ export default function ItemInfoAndOptions({item}) {
 
   return (
     <>
-      <h1>{item.name}</h1>
+      <h1>{item.name} {item.type}</h1>
       <h2>{item.description}</h2>
       <SizeSelect />
       <h3>Price: ${item.price}.00</h3>
