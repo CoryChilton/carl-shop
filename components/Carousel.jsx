@@ -28,8 +28,4 @@ export default function Carousel({items}) {
   )
 }
 
-// function CarouselTile( {item} ) {
-//   item.carouselImagePath === '' ? null
-// }
-
 

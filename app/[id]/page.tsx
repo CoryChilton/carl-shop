@@ -1,4 +1,4 @@
-import { items } from '../../items/items';
+import { items } from '../../data/items';
 import ClickCarousel from '../../components/itemPage/ClickCarousel';
 import ItemInfoAndOptions from '../../components/itemPage/ItemInfoAndOptions';
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { items } from '../items/items';
+import { items } from '../data/items';
 import Carousel from '../components/Carousel';
 
 export default function Home() {
