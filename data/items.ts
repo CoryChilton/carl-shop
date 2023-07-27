@@ -37,7 +37,7 @@ export const items = new Map([
     quantity: 0,
     description: 'The original CARL jersey, first worn by CARL\'s members at the 2023 Vegas Program Playoffs.',
     carouselImagePath: '/images/carousel/vegasJersey1.png',
-    imagePaths: ['/images/items/vegasJersey1.png', '/images/items/vegasJersey2.png', '/images/items/vegasJersey3.jpg', '/images/lineup.jpg', '/images/lineup2.jpg']
+    imagePaths: ['/images/items/vegasJersey1.png', '/images/items/vegasJersey2.png', '/images/items/vegasJersey3.jpg', '/images/lineupBackTall.jpg', '/images/lineup2.jpg']
   }],
   ["5", {
     id: "5",
