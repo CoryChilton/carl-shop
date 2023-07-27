@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="font-semibold">STORE INFORMATION</div>
           <FooterBreakLine />
           <Image src="/images/carlLogo.jpg" width={100} height={100} alt="CARL Logo" className="mt-2 mb-4 rounded-3xl"/>
-          <div className="font-medium mb-2">CARL's Closet</div>
+          <div className="font-medium mb-2">CARL&apos;s Closet</div>
           <div className="font-extralight text-center md:text-start">Shop the official merchandise created by CARL. Support the California Roundnet Legion movement.<br/>Shop CARL.</div>
         </div>
         <div className="flex flex-col flex-none border-slate-400 border p-3 w-full md:w-fit items-center md:items-start">
