@@ -59,5 +59,15 @@ export const items = new Map([
     carouselImagePath: '/images/carousel/stickerTrimmed.png',
     imagePaths: ['/images/items/sticker1.png', '/images/items/sticker2.png', '/images/items/sticker3.png']
   }],
+  ["7", {
+    id: "7",
+    name: 'CARL Party',
+    type: 'Shot Glass',
+    price: 1,
+    quantity: 0,
+    description: 'Celebrate your post tournament wins with the CARL Party shot glass.',
+    carouselImagePath: '/images/carousel/shotTrimmed.png',
+    imagePaths: ['/images/items/shot1.png', '/images/items/shot2.png', '/images/items/shot3.png', '/images/items/shot4.png']
+  }],
 ]);
 
