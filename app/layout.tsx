@@ -4,7 +4,7 @@ import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: 'CARL Merch Store',
+  title: 'CARL\'s Closet',
   description: 'Get your favorite CARL gear',
 }
 
