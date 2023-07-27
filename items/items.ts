@@ -69,5 +69,15 @@ export const items = new Map([
     carouselImagePath: '/images/carousel/shotTrimmed.png',
     imagePaths: ['/images/items/shot1.png', '/images/items/shot2.png', '/images/items/shot3.png', '/images/items/shot4.png']
   }],
+  ["8", {
+    id: "8",
+    name: 'CARL Comfy',
+    type: 'Socks',
+    price: 15,
+    quantity: 0,
+    description: 'Arguably more important than your cleats, these high performance socks are sure to give you an edge over the field.',
+    carouselImagePath: '/images/carousel/socksTrimmed.png',
+    imagePaths: ['/images/items/socks1.png', '/images/items/socks2.png', '/images/items/socks3.png', '/images/items/socks4.png', '/images/items/socks5.png', ]
+  }],
 ]);
 
