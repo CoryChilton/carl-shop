@@ -8,7 +8,8 @@ export default function Home() {
 
   return (
     <main>
-      <Image src="/images/lineup.jpg" priority={true} width={2000} height={1000} alt="Lineup" className="w-full" />
+      <Image src="/images/lineupBackShort.jpg" priority={true} width={2000} height={1000} alt="Lineup" className="w-full hidden md:block" />
+      <Image src="/images/lineupBackTall.jpg" priority={true} width={2000} height={1000} alt="Lineup" className="w-full md:hidden" />
       <Carousel items={carouselItems}/>
     </main>
   );
