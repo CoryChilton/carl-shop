@@ -4,7 +4,8 @@ import QuantitySelect from './QuantitySelect'
 import { useState } from 'react';
 
 export default function ItemInfoAndOptions({item}) {
-  const [quantity, setQuantity] = useState(1);
+  const initialQuantity = item.quantity === 0 ? 0 : 1;
+  const [quantity, setQuantity] = useState(initialQuantity);
   let total = item.price * quantity;
 
   return (
@@ -14,6 +15,9 @@ export default function ItemInfoAndOptions({item}) {
       <h3 className="text-lg font-semibold mb-4">Price: ${item.price}.00</h3>
       <SizeSelect />
       <QuantitySelect onIncrease={() => setQuantity(quantity+1)} onDecrease={() => quantity > 1 && setQuantity(quantity-1)} quantity={quantity} />
+      {item.quantity===0 && (
+        <div className="text-red-500 mb-4 text-lg font-semibold">Out of Stock!</div>
+      )}
       <h3 className="text-2xl font-semibold flex justify-between bg-gray-100 mb-4 items-center p-2 border-t border-gray-400">
         <div className="text-xl">
           Total:

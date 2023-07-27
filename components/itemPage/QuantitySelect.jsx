@@ -2,13 +2,13 @@ export default function QuantitySelect({onIncrease, onDecrease, quantity}) {
   return (
     <div className="flex w-28 h-12 justify-between items-center border border-gray-200 rounded-sm mb-4">
       <div className="h-full border-r border-gray-200 rounded-r-sm">
-        <QuantityButton onClick={onDecrease} disabled={quantity===1}>-</QuantityButton>
+        <QuantityButton onClick={onDecrease} disabled={quantity <= 1}>-</QuantityButton>
       </div>
       <div className="h-full w-full flex items-center justify-center shadow-inner">
         <h1 className="">{quantity}</h1>
       </div>
       <div className="h-full border-l border-gray-200 rounded-l-sm">
-        <QuantityButton onClick={onIncrease} disabled={false}>+</QuantityButton>
+        <QuantityButton onClick={onIncrease} disabled={quantity <= 0}>+</QuantityButton>
       </div>
     </div>
   )
