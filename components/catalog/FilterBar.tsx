@@ -1,13 +1,11 @@
 'use client'
 import { useState } from 'react';
 
-export default function FilterBar() {
+export default function FilterBar({ inStockChecked, checkInStock } : { inStockChecked : boolean, checkInStock : () => void }) {
   const [showAvailabilityMenu, setShowAvailabilityMenu] = useState(false);
   const [showPriceMenu, setShowPriceMenu] = useState(false);
-  const [inStockChecked, setInStockChecked] = useState(false);
   const clickAvailability = () => {setShowAvailabilityMenu(!showAvailabilityMenu); setShowPriceMenu(false);}
   const clickPrice = () => {setShowPriceMenu(!showPriceMenu); setShowAvailabilityMenu(false);}
-  const checkInStock = () => setInStockChecked(!inStockChecked);
 
 
   return (
