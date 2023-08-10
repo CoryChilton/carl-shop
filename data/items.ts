@@ -14,7 +14,7 @@ export const items = new Map([
     name: 'Lightning McDean',
     type: 'Baseball Jersey',
     price: 100,
-    quantity: 0,
+    quantity: 1,
     description: 'If you wanna play like the man, you first gotta look like the man. Increases speed and total net domination.',
     carouselImagePath: '/images/carousel/lightningMcDean2.png',
     imagePaths: ['/images/items/lightningMcDean1.png', '/images/items/lightningMcDean2.png', '/images/items/lightningMcDean3.png']
@@ -24,7 +24,7 @@ export const items = new Map([
     name: 'Irritable Ball Shmackers',
     type: 'T-Shirt',
     price: 50,
-    quantity: 0,
+    quantity: 1,
     description: 'Don\'t let gastrointestinal issues slow you down, let the people know you can shmack the spikeball despite your terminal genetic ailments.',
     carouselImagePath: '/images/carousel/IBS1.png',
     imagePaths: ['/images/items/IBS4.jpg', '/images/items/IBS2.jpg', '/images/items/IBS3.jpg', '/images/items/IBS1.png']
@@ -44,7 +44,7 @@ export const items = new Map([
     name: 'CARL Coffee',
     type: 'Mug',
     price: 20,
-    quantity: 0,
+    quantity: 1,
     description: 'Drink coffee like a champ.',
     carouselImagePath: '/images/carousel/mugTrimmed1.png',
     imagePaths: ['/images/items/mug1.png', '/images/items/mug2.png', '/images/items/mug3.png', '/images/items/mug4.png', '/images/items/mug5.png', '/images/items/mug6.png', '/images/items/mug7.png', ]
