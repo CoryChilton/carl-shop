@@ -63,7 +63,7 @@ export const items = new Map([
     id: "7",
     name: 'CARL Party',
     type: 'Shot Glass',
-    price: 1,
+    price: 10,
     quantity: 0,
     description: 'Celebrate your post tournament wins with the CARL Party shot glass.',
     carouselImagePath: '/images/carousel/shotTrimmed.png',
@@ -81,3 +81,13 @@ export const items = new Map([
   }],
 ]);
 
+export interface ItemConfig {
+  id: string;
+  name: string;
+  type: string;
+  price: number;
+  quantity: number;
+  description: string;
+  carouselImagePath: string;
+  imagePaths: string[];
+}
