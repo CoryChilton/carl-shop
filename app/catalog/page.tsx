@@ -14,16 +14,39 @@ export default function Catalog() {
     priceMax: Infinity
   });
 
-
   const checkInStock = () => setFilterOptions({
     ...filterOptions,
     inStockChecked: !filterOptions.inStockChecked
   });
 
+  function changeMinPrice(e: React.ChangeEvent<HTMLInputElement>) {
+    let newPriceMin = Number(e.target.value);
+    if (Number.isNaN(newPriceMin)) {
+      newPriceMin = filterOptions.priceMin;
+    }
+    setFilterOptions({
+      ...filterOptions,
+      priceMin: newPriceMin
+    })
+  }
+
+  function changeMaxPrice(e: React.ChangeEvent<HTMLInputElement>) {
+    let newPriceMax = Number(e.target.value);
+    if (Number.isNaN(newPriceMax)) {
+      newPriceMax = filterOptions.priceMax;
+    }
+    else if (newPriceMax === 0) {
+      newPriceMax = Infinity;
+    }
+    setFilterOptions({
+      ...filterOptions,
+      priceMax: newPriceMax
+    })
+  }
 
   return (
     <>
-      <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} />
+      <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} />
       <ItemGrid items={catalogItems} filterOptions={filterOptions} />
     </>
   );

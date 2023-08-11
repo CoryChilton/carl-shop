@@ -6,8 +6,9 @@ import { filterOptionsInterface } from '@/app/catalog/page';
 
 export default function ItemGrid({ items, filterOptions } : {items : ItemConfig[], filterOptions: filterOptionsInterface}) {
   if (filterOptions.inStockChecked) {
-    items = items.filter((item) => item.quantity)
+    items = items.filter((item) => item.quantity);
   }
+  items = items.filter((item) => item.price >= filterOptions.priceMin && item.price <= filterOptions.priceMax);
 
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 content-center px-14 pt-10 pb-60">
