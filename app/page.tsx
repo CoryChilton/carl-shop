@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { items } from '../data/items';
-import Carousel from '../components/Carousel';
+import Carousel from '../components/home/Carousel';
 
 export default function Home() {
   const carouselItems = ( Array.from(items.values()) ).filter((item) => item.carouselImagePath !== '');

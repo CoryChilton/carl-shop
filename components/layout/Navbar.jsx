@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import MobileMenuButton from '../home/MobileMenuButton';
 
 export default function Navbar() {
   return (
@@ -27,9 +28,7 @@ export default function Navbar() {
         <button className="hover:bg-gray-100 rounded-full ease-in duration-100 p-3">
           <Image src="/images/cart.png" width={22} height={20} alt="Cart"/>
         </button>
-        <button className="hover:bg-gray-100 rounded-full ease-in duration-100 py-2 px-3 block md:hidden">
-          <Image src="/images/hamburger.png" width={22} height={20} alt="Menu"/>
-        </button>
+        <MobileMenuButton />
       </div>
     </nav>
   );
