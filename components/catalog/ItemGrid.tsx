@@ -35,7 +35,7 @@ export default function ItemGrid({
           There are no items that match your selected filters
         </div>
         <div className="text-2xl">
-          Consider resetting your filters with the "Reset Filters" button
+          Consider resetting your filters with the &quot;Reset Filters&quot; button
         </div>
       </div>
     )
