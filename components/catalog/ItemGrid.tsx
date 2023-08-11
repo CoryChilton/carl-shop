@@ -5,10 +5,16 @@ import { filterOptionsInterface } from '@/app/catalog/page';
 
 
 export default function ItemGrid({ items, filterOptions } : {items : ItemConfig[], filterOptions: filterOptionsInterface}) {
-  if (filterOptions.inStockChecked) {
-    items = items.filter((item) => item.quantity);
+  //Filter items based on availability and price filters
+  items = items.filter((item) => (!filterOptions.inStockChecked || item.quantity) && (item.price >= filterOptions.priceMin && item.price <= filterOptions.priceMax));
+
+  if (items.length === 0) {
+    return (
+      <div className="text-center text-red-700 font-bold text-3xl mb-72 mt-48">
+        There are no items that match your selected filters
+      </div>
+    )
   }
-  items = items.filter((item) => item.price >= filterOptions.priceMin && item.price <= filterOptions.priceMax);
 
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 content-center px-14 pt-10 pb-60">
