@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { filterOptionsInterface } from '@/app/catalog/page';
 import AvailabilityMenu from './AvailabilityMenu';
 import PriceMenu from './PriceMenu';
+import Image from 'next/image';
 
 export default function FilterBar({ 
   filterOptions,
@@ -23,23 +24,29 @@ export default function FilterBar({
   const clickPrice = () => {setShowPriceMenu(!showPriceMenu); setShowAvailabilityMenu(false);}
 
   return (
-    <div className="relative inline-block">
-      <div className="inline-block">
+    <div className="relative flex gap-8">
+      <div className="">
         Filter: 
       </div>
-      <button onClick={clickAvailability} className="inline-block ml-10">
-        Availability
+      <button onClick={clickAvailability} className="opacity-75 hover:opacity-100 duration-100 ease-in">
+        <div className="inline-block mr-2">
+          Availability
+        </div>  
+        <Image className="inline-block" src="/images/general/caret.png" width={18} height={18} alt="caret" />
       </button>
       {showAvailabilityMenu && (
         <AvailabilityMenu inStockChecked={filterOptions.inStockChecked} checkInStock={checkInStock} />
       )}
-      <button onClick={clickPrice} className="inline-block ml-10">
-        Price
+      <button onClick={clickPrice} className="opacity-75 hover:opacity-100 duration-100 ease-in">
+        <div className="inline-block mr-2">
+          Price
+        </div>
+        <Image className="inline-block" src="/images/general/caret.png" width={18} height={18} alt="caret" />
       </button>
       {showPriceMenu && (
         <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} />
       )}
-      <button onClick={resetFilters} className="inline-block ml-10">
+      <button onClick={resetFilters} className="opacity-75 hover:opacity-100 duration-100 ease-in">
         Reset Filters
       </button>
     </div>

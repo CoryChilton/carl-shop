@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import MobileMenuButton from '../home/MobileMenuButton';
+import MobileMenuButton from './MobileMenuButton';
 
 export default function Navbar() {
   return (
@@ -16,17 +16,17 @@ export default function Navbar() {
       </div>
       <div className="flex-initial w-96 mx-6 border border-slate-600 rounded-full hidden md:flex py-1 pr-4">
         <button className="ml-1 flex-none hover:bg-gray-100 rounded-full p-2 ease-in duration-100">
-          <Image src="/images/search.png" width={18} height={10} alt="search"/>
+          <Image src="/images/general/search.png" width={18} height={10} alt="search"/>
         </button>
         <input placeholder="Search..." className="w-full outline-none" />
       </div>
       <div className="flex-none flex gap-x-0 md:gap-x-6 mr-8 items-center">
         <NavButton href="/">Login</NavButton>
         <button className="ml-1 flex-none hover:bg-gray-100 rounded-full p-3 ease-in-out duration-100 block md:hidden">
-          <Image src="/images/search.png" width={18} height={10} alt="search"/>
+          <Image src="/images/general/search.png" width={18} height={10} alt="search"/>
         </button>
         <button className="hover:bg-gray-100 rounded-full ease-in duration-100 p-3">
-          <Image src="/images/cart.png" width={22} height={20} alt="Cart"/>
+          <Image src="/images/general/cart.png" width={22} height={20} alt="Cart"/>
         </button>
         <MobileMenuButton />
       </div>

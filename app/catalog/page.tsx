@@ -58,8 +58,10 @@ export default function Catalog() {
 
   return (
     <>
-      <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} resetFilters={resetFilters} />
-      <SortBar sortOption={sortOption} changeSortOption={changeSortOption} />
+      <div className="flex flex-wrap justify-between mx-16 lg:flex-row flex-col items-center gap-y-6">
+        <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} resetFilters={resetFilters} />
+        <SortBar sortOption={sortOption} changeSortOption={changeSortOption} />
+      </div>
       <ItemGrid items={catalogItems} filterOptions={filterOptions} sortOption={sortOption} />
     </>
   );

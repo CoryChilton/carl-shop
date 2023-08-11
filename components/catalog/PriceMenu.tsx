@@ -10,18 +10,15 @@ export default function PriceMenu({
   changeMaxPrice: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }) {
   return (
-    <div className="border border-black p-2 absolute top-5 left-44 z-10 bg-white">
-      <div>
-        Price Menu
+    <div className="border border-slate-400 p-4 absolute top-8 left-[12.5rem] z-10 bg-white rounded-2xl flex items-center animate-fadeInMenu">
+      <div className="mr-1 text-slate-600">
+        $
       </div>
-      <div>
-        <div>Min:</div>
-        <input value={!priceMin ? '' : priceMin} onChange={changeMinPrice} placeholder="Min Price" className="border border-black p-1" />
+      <input value={!priceMin ? '' : priceMin} onChange={changeMinPrice} placeholder="From" className="border border-slate-500 p-1 pl-3 rounded-full w-20" />
+      <div className="mr-1 ml-4 text-slate-600">
+        $
       </div>
-      <div>
-        <div>Max:</div>
-        <input value={priceMax === Infinity ? '' : priceMax} onChange={changeMaxPrice} placeholder="Max Price" className="border border-black p-1" />
-      </div>
+      <input value={priceMax === Infinity ? '' : priceMax} onChange={changeMaxPrice} placeholder="To" className="border border-slate-500 p-1 pl-3 rounded-full w-20" />
     </div>
   )
 }

@@ -12,9 +12,14 @@ module.exports = {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-300%)' }
         },
+        fadeInFromTop: {
+          '0%': {opacity: 0, transform: 'translateY(-30%)' },
+          '100%': {opacity: 1, transform: 'translateY(0%)'},
+        },
       },
       animation: {
         carousel: 'marquee 120s linear infinite',
+        fadeInMenu: 'fadeInFromTop 0.2s ease-out',
       }
     },
   },
