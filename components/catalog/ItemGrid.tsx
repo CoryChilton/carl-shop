@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import ItemBlock from "@/components/catalog/ItemBlock";
 import { ItemConfig } from '@/data/items';
+import { filterOptionsInterface } from '@/app/catalog/page';
 
 
-export default function ItemGrid({ items, inStockChecked } : {items : ItemConfig[], inStockChecked: boolean}) {
-  if (inStockChecked) {
+export default function ItemGrid({ items, filterOptions } : {items : ItemConfig[], filterOptions: filterOptionsInterface}) {
+  if (filterOptions.inStockChecked) {
     items = items.filter((item) => item.quantity)
   }
 

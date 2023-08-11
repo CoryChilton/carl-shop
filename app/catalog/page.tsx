@@ -8,15 +8,30 @@ const catalogItems = Array.from(items.values());
 
 export default function Catalog() {
 
-  const [inStockChecked, setInStockChecked] = useState(false);
-  const checkInStock = () => setInStockChecked(!inStockChecked);
+  const [filterOptions, setFilterOptions] = useState({
+    inStockChecked: false,
+    priceMin: 0,
+    priceMax: Infinity
+  });
+
+
+  const checkInStock = () => setFilterOptions({
+    ...filterOptions,
+    inStockChecked: !filterOptions.inStockChecked
+  });
 
 
   return (
     <>
-      <FilterBar inStockChecked={inStockChecked} checkInStock={checkInStock} />
-      <ItemGrid items={catalogItems} inStockChecked={inStockChecked}/>
+      <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} />
+      <ItemGrid items={catalogItems} filterOptions={filterOptions} />
     </>
   );
+}
+
+export interface filterOptionsInterface{
+  inStockChecked: boolean,
+  priceMin: number,
+  priceMax: number
 }
 

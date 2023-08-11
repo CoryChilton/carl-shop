@@ -1,12 +1,12 @@
 'use client'
 import { useState } from 'react';
+import { filterOptionsInterface } from '@/app/catalog/page';
 
-export default function FilterBar({ inStockChecked, checkInStock } : { inStockChecked : boolean, checkInStock : () => void }) {
+export default function FilterBar({ filterOptions, checkInStock } : { filterOptions : filterOptionsInterface, checkInStock : () => void }) {
   const [showAvailabilityMenu, setShowAvailabilityMenu] = useState(false);
   const [showPriceMenu, setShowPriceMenu] = useState(false);
   const clickAvailability = () => {setShowAvailabilityMenu(!showAvailabilityMenu); setShowPriceMenu(false);}
   const clickPrice = () => {setShowPriceMenu(!showPriceMenu); setShowAvailabilityMenu(false);}
-
 
   return (
     <div className="relative">
@@ -16,11 +16,15 @@ export default function FilterBar({ inStockChecked, checkInStock } : { inStockCh
       <button onClick={clickAvailability} className="inline-block">
         Availability
       </button>
-      {showAvailabilityMenu && <AvailabilityMenu inStockChecked={inStockChecked} checkInStock={checkInStock} />}
+      {showAvailabilityMenu && (
+        <AvailabilityMenu inStockChecked={filterOptions.inStockChecked} checkInStock={checkInStock} />
+      )}
       <button onClick={clickPrice} className="inline-block">
         Price
       </button>
-      {showPriceMenu && <PriceMenu />}
+      {showPriceMenu && (
+        <PriceMenu />
+      )}
     </div>
   );
 }
