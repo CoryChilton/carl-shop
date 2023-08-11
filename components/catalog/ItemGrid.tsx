@@ -3,10 +3,30 @@ import ItemBlock from "@/components/catalog/ItemBlock";
 import { ItemConfig } from '@/data/items';
 import { filterOptionsInterface } from '@/app/catalog/page';
 
-
-export default function ItemGrid({ items, filterOptions } : {items : ItemConfig[], filterOptions: filterOptionsInterface}) {
+export default function ItemGrid({ 
+  items, 
+  filterOptions, 
+  sortOption 
+} : {
+  items : ItemConfig[], 
+  filterOptions: filterOptionsInterface, 
+  sortOption: string
+}) {
   //Filter items based on availability and price filters
   items = items.filter((item) => (!filterOptions.inStockChecked || item.quantity) && (item.price >= filterOptions.priceMin && item.price <= filterOptions.priceMax));
+
+  //Sort items based on sortOption
+  if (sortOption === "Featured") {
+    items.sort((i1, i2) => i1.id < i2.id ? -1 : 11);
+  } else if (sortOption === "Alphabetically, A-Z") {
+    items.sort((i1, i2) => i1.name.toLowerCase() < i2.name.toLowerCase() ? -1 : 1);
+  } else if (sortOption === "Alphabetically, Z-A") {
+    items.sort((i1, i2) => i1.name.toLowerCase() < i2.name.toLowerCase() ? 1 : -1);
+  } else if (sortOption === "Price, low to high") {
+    items.sort((i1, i2) => i1.price - i2.price);
+  } else if (sortOption === "Price, high to low") {
+    items.sort((i1, i2) => i2.price - i1.price);
+  }
 
   if (items.length === 0) {
     return (

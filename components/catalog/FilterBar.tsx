@@ -5,13 +5,13 @@ import AvailabilityMenu from './AvailabilityMenu';
 import PriceMenu from './PriceMenu';
 
 export default function FilterBar({ 
-  filterOptions, 
+  filterOptions,
   checkInStock, 
   changeMinPrice, 
   changeMaxPrice,
   resetFilters
 } : { 
-  filterOptions : filterOptionsInterface, 
+  filterOptions : filterOptionsInterface,
   checkInStock : () => void,
   changeMinPrice: (e: React.ChangeEvent<HTMLInputElement>) => void,
   changeMaxPrice: (e: React.ChangeEvent<HTMLInputElement>) => void,
@@ -23,7 +23,7 @@ export default function FilterBar({
   const clickPrice = () => {setShowPriceMenu(!showPriceMenu); setShowAvailabilityMenu(false);}
 
   return (
-    <div className="relative">
+    <div className="relative inline-block">
       <div className="inline-block">
         Filter: 
       </div>

@@ -1,6 +1,7 @@
 'use client'
 import { items } from "@/data/items"
 import FilterBar from "@/components/catalog/FilterBar";
+import SortBar from "@/components/catalog/SortBar";
 import ItemGrid from "@/components/catalog/ItemGrid";
 import { useState } from 'react';
 
@@ -8,6 +9,7 @@ const catalogItems = Array.from(items.values());
 
 export default function Catalog() {
 
+  const [sortOption, setSortOption] = useState("Featured")
   const [filterOptions, setFilterOptions] = useState({
     inStockChecked: false,
     priceMin: 0,
@@ -50,10 +52,15 @@ export default function Catalog() {
     })
   }
 
+  function changeSortOption(e: React.ChangeEvent<HTMLSelectElement>) {
+    setSortOption(e.target.value);
+  }
+
   return (
     <>
       <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} resetFilters={resetFilters} />
-      <ItemGrid items={catalogItems} filterOptions={filterOptions} />
+      <SortBar sortOption={sortOption} changeSortOption={changeSortOption} />
+      <ItemGrid items={catalogItems} filterOptions={filterOptions} sortOption={sortOption} />
     </>
   );
 }
