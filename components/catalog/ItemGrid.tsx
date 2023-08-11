@@ -10,8 +10,13 @@ export default function ItemGrid({ items, filterOptions } : {items : ItemConfig[
 
   if (items.length === 0) {
     return (
-      <div className="text-center text-red-700 font-bold text-3xl mb-72 mt-48">
-        There are no items that match your selected filters
+      <div className="text-center text-red-700 mb-72 mt-48">
+        <div className="text-3xl font-bold mb-10">
+          There are no items that match your selected filters
+        </div>
+        <div className="text-2xl">
+          Consider resetting your filters with the "Reset Filters" button
+        </div>
       </div>
     )
   }

@@ -19,6 +19,12 @@ export default function Catalog() {
     inStockChecked: !filterOptions.inStockChecked
   });
 
+  const resetFilters = () => setFilterOptions({
+    inStockChecked: false,
+    priceMin: 0,
+    priceMax: Infinity
+  })
+
   function changeMinPrice(e: React.ChangeEvent<HTMLInputElement>) {
     let newPriceMin = Number(e.target.value);
     if (Number.isNaN(newPriceMin)) {
@@ -46,7 +52,7 @@ export default function Catalog() {
 
   return (
     <>
-      <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} />
+      <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} resetFilters={resetFilters} />
       <ItemGrid items={catalogItems} filterOptions={filterOptions} />
     </>
   );

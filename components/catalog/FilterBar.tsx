@@ -5,12 +5,17 @@ import AvailabilityMenu from './AvailabilityMenu';
 import PriceMenu from './PriceMenu';
 
 export default function FilterBar({ 
-  filterOptions, checkInStock, changeMinPrice, changeMaxPrice
+  filterOptions, 
+  checkInStock, 
+  changeMinPrice, 
+  changeMaxPrice,
+  resetFilters
 } : { 
   filterOptions : filterOptionsInterface, 
   checkInStock : () => void,
   changeMinPrice: (e: React.ChangeEvent<HTMLInputElement>) => void,
   changeMaxPrice: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  resetFilters: () => void
 }) {
   const [showAvailabilityMenu, setShowAvailabilityMenu] = useState(false);
   const [showPriceMenu, setShowPriceMenu] = useState(false);
@@ -34,6 +39,9 @@ export default function FilterBar({
       {showPriceMenu && (
         <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} />
       )}
+      <button onClick={resetFilters} className="inline-block ml-10">
+        Reset Filters
+      </button>
     </div>
   );
 }
