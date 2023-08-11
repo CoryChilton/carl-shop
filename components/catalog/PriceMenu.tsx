@@ -10,7 +10,7 @@ export default function PriceMenu({
   changeMaxPrice: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }) {
   return (
-    <div className="border border-slate-400 p-4 absolute top-8 left-[12.5rem] z-10 bg-white rounded-2xl flex items-center animate-fadeInMenu">
+    <div className="border border-slate-400 p-4 absolute top-8 -left-1 z-10 bg-white rounded-2xl flex items-center animate-fadeInMenu">
       <div className="mr-1 text-slate-600">
         $
       </div>
