@@ -28,8 +28,8 @@ export default function FilterBar({
     document.addEventListener("click", handleClickOutsideMenu, true);
   }, [])
 
-  const refAvailabilityMenu = useRef();
-  const refPriceMenu = useRef();
+  const refAvailabilityMenu = useRef<HTMLDivElement>(null);
+  const refPriceMenu = useRef<HTMLDivElement>(null);
 
   const handleClickOutsideMenu = (e: any) => {
     if(!refAvailabilityMenu.current?.contains(e.target) && !refPriceMenu.current?.contains(e.target)) {
