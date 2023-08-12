@@ -18,15 +18,17 @@ module.exports = {
         },
         fadeOutToTop: {
           '0%': {opacity: 1, transform: 'translateY(0%)'},
-          '100%': {opacity: 0, transform: 'translateY(-30%)'},
+          '100%': {opacity: .1, transform: 'translateY(-30%)', display: 'none'},
         }
       },
       animation: {
         carousel: 'marquee 120s linear infinite',
         fadeInMenu: 'fadeInFromTop 0.2s ease-out',
         fadeOutMenu: 'fadeOutToTop 0.2s ease-in'
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 }

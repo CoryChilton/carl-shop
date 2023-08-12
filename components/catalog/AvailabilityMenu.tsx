@@ -1,6 +1,13 @@
-export default function AvailabilityMenu( {inStockChecked, checkInStock} : {inStockChecked: boolean, checkInStock: () => void} ) {
+export default function AvailabilityMenu({
+  inStockChecked, 
+  checkInStock, 
+  show} : {
+    inStockChecked: boolean, 
+    checkInStock: () => void, 
+    show: boolean 
+  }) {
   return (
-    <div className="border border-slate-400 absolute top-8 -left-1 z-10 bg-white rounded-2xl py-2 px-4 animate-fadeInMenu flex">
+    <div className={`${show ? 'animate-fadeInMenu' : 'animate-fadeOutMenu'} border border-slate-400 absolute top-8 -left-1 z-10 bg-white rounded-2xl py-2 px-4 flex fill-mode-forwards`}>
       <input type="checkbox" checked={inStockChecked} onChange={checkInStock} className="inline-block"/>
       <div className="inline-block ml-4 text-slate-600 whitespace-nowrap">
         In Stock

@@ -50,8 +50,8 @@ export default function FilterBar({
           </div>  
           <Image className="inline-block" src="/images/general/caret.png" width={18} height={18} alt="caret" />
         </button>
-        <div className={`${!showAvailabilityMenu && 'hidden'}`}>
-          <AvailabilityMenu inStockChecked={filterOptions.inStockChecked} checkInStock={checkInStock} />
+        <div>
+          <AvailabilityMenu inStockChecked={filterOptions.inStockChecked} checkInStock={checkInStock} show={showAvailabilityMenu} />
         </div>
       </div>
       <div ref={refPriceMenu} className="relative">
@@ -61,11 +61,8 @@ export default function FilterBar({
           </div>
           <Image className="inline-block" src="/images/general/caret.png" width={18} height={18} alt="caret" />
         </button>
-        {/* {showPriceMenu && (
-          <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} />
-        )} */}
-        <div className={`${!showPriceMenu && 'hidden'}`}>
-          <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} />
+        <div>
+          <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} show={showPriceMenu} />
         </div>
       </div>
       <button onClick={resetFilters} className="opacity-75 hover:opacity-100 duration-100 ease-in">

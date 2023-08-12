@@ -2,15 +2,17 @@ export default function PriceMenu({
   priceMin, 
   priceMax, 
   changeMaxPrice, 
-  changeMinPrice
+  changeMinPrice,
+  show,
 } : {
   priceMin: number, 
   priceMax: number, 
   changeMinPrice: (e: React.ChangeEvent<HTMLInputElement>) => void, 
   changeMaxPrice: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  show : boolean,
 }) {
   return (
-    <div className="border border-slate-400 p-4 absolute top-8 -left-1 z-10 bg-white rounded-2xl flex items-center animate-fadeInMenu">
+    <div className={`${show ? 'animate-fadeInMenu' : 'animate-fadeOutMenu'} border border-slate-400 p-4 absolute top-8 -left-1 z-10 bg-white rounded-2xl flex items-center fill-mode-forwards`}>
       <div className="mr-1 text-slate-600">
         $
       </div>
