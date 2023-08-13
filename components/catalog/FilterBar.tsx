@@ -20,8 +20,15 @@ export default function FilterBar({
 }) {
   const [showAvailabilityMenu, setShowAvailabilityMenu] = useState(false);
   const [showPriceMenu, setShowPriceMenu] = useState(false);
-  const clickAvailability = () => {setShowAvailabilityMenu(!showAvailabilityMenu); setShowPriceMenu(false)};
-  const clickPrice = () => {setShowPriceMenu(!showPriceMenu); setShowAvailabilityMenu(false)};
+  const clickAvailability = () => {
+    setShowAvailabilityMenu(!showAvailabilityMenu); 
+    setShowPriceMenu(false);
+    avMenuClicked.current = true;
+  };
+  const clickPrice = () => {
+    setShowPriceMenu(!showPriceMenu); setShowAvailabilityMenu(false);
+    priceMenuClicked.current = true;
+  };
 
   //Close the availability and price menu when you click outside of them
   useEffect(() => {
@@ -38,6 +45,10 @@ export default function FilterBar({
     }
   }
 
+  //See if the menus have been clicked yet
+  const avMenuClicked = useRef(false);
+  const priceMenuClicked = useRef(false);
+
   return (
     <div className="flex gap-8">
       <div className="">
@@ -51,7 +62,7 @@ export default function FilterBar({
           <Image className="inline-block" src="/images/general/caret.png" width={18} height={18} alt="caret" />
         </button>
         <div>
-          <AvailabilityMenu inStockChecked={filterOptions.inStockChecked} checkInStock={checkInStock} show={showAvailabilityMenu} />
+          <AvailabilityMenu inStockChecked={filterOptions.inStockChecked} checkInStock={checkInStock} show={showAvailabilityMenu} animateReady={avMenuClicked.current} />
         </div>
       </div>
       <div ref={refPriceMenu} className="relative">
@@ -62,7 +73,7 @@ export default function FilterBar({
           <Image className="inline-block" src="/images/general/caret.png" width={18} height={18} alt="caret" />
         </button>
         <div>
-          <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} show={showPriceMenu} />
+          <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} show={showPriceMenu} animateReady={priceMenuClicked.current} />
         </div>
       </div>
       <button onClick={resetFilters} className="opacity-75 hover:opacity-100 duration-100 ease-in">
