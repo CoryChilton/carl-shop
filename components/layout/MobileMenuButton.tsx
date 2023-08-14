@@ -12,19 +12,21 @@ export default function MobileMenuButton() {
         <Image src="/images/general/hamburger.png" width={22} height={20} alt="Mobile Menu"/>
       </button>
       {showFullMenu && (
-        <MobileMenu />
+        <MobileMenu close={() => setShowFullMenu(false)} />
       )}
     </div>
   )
 }
 
-function MobileMenu() {
+function MobileMenu( {close} : {close:() => void} ) {
   return (
-    <div className="border border-black absolute top-10 right-0 bg-white z-10">
-      <Link className="block" href="/">Home</Link>
-      <Link className="block" href="/catalog">Catalog</Link>
-      <Link className="block" href="/support">Support</Link>
-      <Link className="block whitespace-nowrap" href="/sizeguide">Size Guide</Link>
+    <div className="bg-gray-100 border border-black z-10 absolute -right-8 top-24 animate-mobileMenu h-screen w-screen flex flex-col items-end">
+      <button onClick={close}>Close</button>
+      <Link href="/">Login</Link>
+      <Link href="/">Home</Link>
+      <Link href="/catalog">Catalog</Link>
+      <Link href="/support">Support</Link>
+      <Link href="/sizeguide">Size Guide</Link>
     </div>
   )
 }

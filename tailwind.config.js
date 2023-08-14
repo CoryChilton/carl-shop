@@ -19,12 +19,17 @@ module.exports = {
         fadeOutToTop: {
           '0%': {opacity: 1, transform: 'translateY(0%)'},
           '100%': {opacity: .1, transform: 'translateY(-30%)', display: 'none'},
+        },
+        slideInFromRight: {
+          '0%': {opacity: 1, transform: 'translateX(100%)'},
+          '100%': {opacity: 1, transform: 'translateX(0%)'},
         }
       },
       animation: {
         carousel: 'marquee 120s linear infinite',
         fadeInMenu: 'fadeInFromTop 0.2s ease-out',
-        fadeOutMenu: 'fadeOutToTop 0.2s ease-in'
+        fadeOutMenu: 'fadeOutToTop 0.2s ease-in',
+        mobileMenu: 'slideInFromRight 0.3s ease-in-out',
       },
     },
   },
