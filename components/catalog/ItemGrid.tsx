@@ -20,6 +20,14 @@ export default function ItemGrid({
     items = items.filter((item) => (item.name.toLowerCase().includes(searchInput.toLowerCase())) || (item.type.toLowerCase().includes(searchInput.toLowerCase())));
   }
 
+  if (items.length === 0) {
+    return (
+      <h2 className="text-3xl font-bold text-center text-red-700 mb-72 mt-20">
+        No results were found for &quot;{searchInput}&quot;
+      </h2>
+    )
+  }
+
   //Filter items based on availability and price filters
   items = items.filter((item) => (!filterOptions.inStockChecked || item.quantity) && (item.price >= filterOptions.priceMin && item.price <= filterOptions.priceMax));
 
