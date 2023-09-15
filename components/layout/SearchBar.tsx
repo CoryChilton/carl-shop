@@ -1,14 +1,21 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link";
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState('');
 
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const handleKeyDown = (e: any) => {
+    if (e.code === "Enter" && linkRef.current) {
+      linkRef.current.click();
+    }
+  };
+
   return (
     <div className="flex-initial w-96 mx-6 border border-slate-600 rounded-full hidden md:flex py-1 pr-4">
-      <Link href={{
+      <Link ref={linkRef} href={{
         pathname: "/catalog",
         query: {search: searchInput}
       }}>
@@ -16,7 +23,7 @@ export default function SearchBar() {
           <Image src="/images/general/search.png" width={20} height={10} alt="search" className="h-auto" />
         </button>
       </Link>
-      <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} placeholder="Search..." className="w-full outline-none" />
+      <input value={searchInput} onKeyDown={handleKeyDown} onChange={(e) => setSearchInput(e.target.value)} placeholder="Search..." className="w-full outline-none" />
     </div>
   )
 }
