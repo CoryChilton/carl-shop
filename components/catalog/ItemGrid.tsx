@@ -6,12 +6,20 @@ import { filterOptionsInterface } from '@/app/catalog/page';
 export default function ItemGrid({ 
   items, 
   filterOptions, 
-  sortOption 
+  sortOption,
+  searchInput
 } : {
   items : ItemConfig[], 
   filterOptions: filterOptionsInterface, 
-  sortOption: string
+  sortOption: string,
+  searchInput: string
 }) {
+
+  //Filter items based on searchInput
+  if (searchInput) {
+    items = items.filter((item) => (item.name.toLowerCase().includes(searchInput.toLowerCase())) || (item.type.toLowerCase().includes(searchInput.toLowerCase())));
+  }
+
   //Filter items based on availability and price filters
   items = items.filter((item) => (!filterOptions.inStockChecked || item.quantity) && (item.price >= filterOptions.priceMin && item.price <= filterOptions.priceMax));
 

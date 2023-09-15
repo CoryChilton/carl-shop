@@ -4,10 +4,12 @@ import FilterBar from "@/components/catalog/FilterBar";
 import SortBar from "@/components/catalog/SortBar";
 import ItemGrid from "@/components/catalog/ItemGrid";
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const catalogItems = Array.from(items.values());
 
 export default function Catalog() {
+  const searchInput = useSearchParams().get('search') || '';
 
   const [sortOption, setSortOption] = useState("Featured")
   const [filterOptions, setFilterOptions] = useState({
@@ -62,7 +64,10 @@ export default function Catalog() {
         <FilterBar filterOptions={filterOptions} checkInStock={checkInStock} changeMinPrice={changeMinPrice} changeMaxPrice={changeMaxPrice} resetFilters={resetFilters} />
         <SortBar sortOption={sortOption} changeSortOption={changeSortOption} />
       </div>
-      <ItemGrid items={catalogItems} filterOptions={filterOptions} sortOption={sortOption} />
+      {searchInput && 
+        <h2 className="text-center mt-5">Search results for "{searchInput}"</h2>
+      }
+      <ItemGrid searchInput={searchInput} items={catalogItems} filterOptions={filterOptions} sortOption={sortOption} />
     </>
   );
 }
