@@ -18,7 +18,7 @@ module.exports = {
         },
         fadeOutToTop: {
           '0%': {opacity: 1, transform: 'translateY(0%)'},
-          '100%': {opacity: .1, transform: 'translateY(-30%)', display: 'none'},
+          '100%': {opacity: 0.1, transform: 'translateY(-30%)'},
         },
         slideInFromRight: {
           '0%': {opacity: 1, transform: 'translateX(100%)'},
