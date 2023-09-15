@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function PriceMenu({
   priceMin, 
@@ -14,12 +14,10 @@ export default function PriceMenu({
   show : boolean,
 }) {
 
-  //see if menu has been shown yet
-  const hasShown = useRef(false);
-  if (show) {hasShown.current = true;}
+  const [hide, setHide] = useState(true);
 
   return (
-    <div className={`${!hasShown.current && 'hidden'} ${show ? 'animate-fadeInMenu' : 'animate-fadeOutMenu'} border border-slate-400 p-4 absolute top-8 -left-1 z-10 bg-white rounded-2xl flex items-center fill-mode-forwards`}>
+    <div onAnimationEnd={() => setHide(!hide)} className={`${(hide && !show) && 'hidden'} ${show ? 'animate-fadeInMenu' : 'animate-fadeOutMenu'} border border-slate-400 p-4 absolute top-8 -left-1 z-10 bg-white rounded-2xl flex items-center fill-mode-forwards`}>
       <div className="mr-1 text-slate-600">
         $
       </div>
