@@ -6,7 +6,7 @@ export default function SortBar({
   changeSortOption: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }) {
   return (
-    <div className="inline-block">
+    <div className="whitespace-nowrap lg:w-auto w-full flex justify-center">
       <div className="inline-block mr-8">
         Sort by:
       </div>

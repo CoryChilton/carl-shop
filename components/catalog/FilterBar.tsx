@@ -44,12 +44,12 @@ export default function FilterBar({
   }
 
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-8 flex-wrap justify-center">
       <div className="">
         Filter: 
       </div>
       <div ref={refAvailabilityMenu} className="relative">
-        <button onClick={clickAvailability} className="opacity-75 hover:opacity-100 duration-100 ease-in">
+        <button onClick={clickAvailability} className="opacity-75 hover:opacity-100 duration-100 ease-in whitespace-nowrap">
           <div className="inline-block mr-2">
             Availability
           </div>  
@@ -60,7 +60,7 @@ export default function FilterBar({
         </div>
       </div>
       <div ref={refPriceMenu} className="relative">
-        <button onClick={clickPrice} className="opacity-75 hover:opacity-100 duration-100 ease-in">
+        <button onClick={clickPrice} className="opacity-75 hover:opacity-100 duration-100 ease-in whitespace-nowrap">
           <div className="inline-block mr-2">
             Price
           </div>
@@ -70,7 +70,7 @@ export default function FilterBar({
           <PriceMenu priceMin={filterOptions.priceMin} priceMax={filterOptions.priceMax} changeMaxPrice={changeMaxPrice} changeMinPrice={changeMinPrice} show={showPriceMenu} />
         </div>
       </div>
-      <button onClick={resetFilters} className="opacity-75 hover:opacity-100 duration-100 ease-in">
+      <button onClick={resetFilters} className="opacity-75 hover:opacity-100 duration-100 ease-in whitespace-nowrap">
         Reset Filters
       </button>
     </div>
