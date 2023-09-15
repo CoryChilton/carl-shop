@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link";
 import { useState, useRef } from "react"
 
-export default function SearchBar() {
+export default function SearchBar({className}:{className?:string}) {
   const [searchInput, setSearchInput] = useState('');
 
   const linkRef = useRef<HTMLAnchorElement>(null);
@@ -14,7 +14,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="flex-initial w-96 mx-6 border border-slate-600 rounded-full hidden md:flex py-1 pr-4">
+    <div className={`${className} border border-slate-600 rounded-full py-1 pr-4`}>
       <Link ref={linkRef} href={{
         pathname: "/catalog",
         query: {search: searchInput}
