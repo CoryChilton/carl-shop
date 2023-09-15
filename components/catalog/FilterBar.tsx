@@ -25,7 +25,8 @@ export default function FilterBar({
     setShowPriceMenu(false);
   };
   const clickPrice = () => {
-    setShowPriceMenu(!showPriceMenu); setShowAvailabilityMenu(false);
+    setShowPriceMenu(!showPriceMenu); 
+    setShowAvailabilityMenu(false);
   };
 
   //Close the availability and price menu when you click outside of them

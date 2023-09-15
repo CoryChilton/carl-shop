@@ -6,6 +6,8 @@ import Link from "next/link";
 export default function MobileMenuButton() {
   const [showFullMenu, setShowFullMenu] = useState(false);
 
+  const clickMenu = () => {setShowFullMenu(!showFullMenu)};
+
   //Close the menu when you click outside of it
   useEffect(() => {
     document.addEventListener("click", handleClickOutsideMenu, true);
@@ -20,11 +22,11 @@ export default function MobileMenuButton() {
   }
 
   return (
-    <div className="relative">
-      <button onClick={() => setShowFullMenu(!showFullMenu)} className="hover:bg-gray-100 rounded-full ease-in duration-100 py-2 px-3 block md:hidden">
+    <div ref={refMobileMenu} className="relative">
+      <button onClick={clickMenu} className="hover:bg-gray-100 rounded-full ease-in duration-100 py-2 px-3 block md:hidden">
         <Image src="/images/general/hamburger.png" width={22} height={20} alt="Mobile Menu"/>
       </button>
-      <div ref={refMobileMenu}>
+      <div>
         <MobileMenu close={() => setShowFullMenu(false)} showFullMenu={showFullMenu} />
       </div>
     </div>

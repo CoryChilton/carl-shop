@@ -18,9 +18,9 @@ export default function SearchBar() {
       <Link ref={linkRef} href={{
         pathname: "/catalog",
         query: {search: searchInput}
-      }}>
+      }} className="flex-none">
         <button className="ml-1 flex-none hover:bg-gray-100 rounded-full p-2 ease-in duration-100">
-          <Image src="/images/general/search.png" width={20} height={10} alt="search" className="h-auto" />
+          <Image src="/images/general/search.png" width={18} height={10} alt="search" className="h-auto" />
         </button>
       </Link>
       <input value={searchInput} onKeyDown={handleKeyDown} onChange={(e) => setSearchInput(e.target.value)} placeholder="Search..." className="w-full outline-none" />
