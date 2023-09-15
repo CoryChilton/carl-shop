@@ -1,17 +1,32 @@
 'use client'
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 export default function MobileMenuButton() {
   const [showFullMenu, setShowFullMenu] = useState(false);
+
+  //Close the menu when you click outside of it
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutsideMenu, true);
+  }, []);
+
+  const refMobileMenu = useRef<HTMLDivElement>(null);
+
+  const handleClickOutsideMenu = (e: any) => {
+    if(!refMobileMenu.current?.contains(e.target)) {
+      setShowFullMenu(false);
+    }
+  }
 
   return (
     <div className="relative">
       <button onClick={() => setShowFullMenu(!showFullMenu)} className="hover:bg-gray-100 rounded-full ease-in duration-100 py-2 px-3 block md:hidden">
         <Image src="/images/general/hamburger.png" width={22} height={20} alt="Mobile Menu"/>
       </button>
-      <MobileMenu close={() => setShowFullMenu(false)} showFullMenu={showFullMenu} />
+      <div ref={refMobileMenu}>
+        <MobileMenu close={() => setShowFullMenu(false)} showFullMenu={showFullMenu} />
+      </div>
     </div>
   )
 }
