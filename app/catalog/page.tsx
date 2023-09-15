@@ -65,7 +65,7 @@ export default function Catalog() {
         <SortBar sortOption={sortOption} changeSortOption={changeSortOption} />
       </div>
       {searchInput && 
-        <h2 className="text-center mt-5">Search results for "{searchInput}"</h2>
+        <h2 className="text-center mt-5">Search results for &quot;{searchInput}&quot;</h2>
       }
       <ItemGrid searchInput={searchInput} items={catalogItems} filterOptions={filterOptions} sortOption={sortOption} />
     </>
