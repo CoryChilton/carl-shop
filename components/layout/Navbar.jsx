@@ -18,7 +18,7 @@ export default function Navbar() {
       </div>
       <SearchBar className="flex-initial w-96 mx-6 hidden md:flex" />
       <div className="flex-none flex gap-x-0 md:gap-x-6 mr-8 items-center">
-        <NavButton href="/">Login</NavButton>
+        <NavButton href="/login">Login</NavButton>
         <MobileSearchButton />
         <button className="hover:bg-gray-100 rounded-full ease-in duration-100 p-3">
           <Image src="/images/general/cart.png" width={22} height={20} alt="Cart" className="h-auto" />

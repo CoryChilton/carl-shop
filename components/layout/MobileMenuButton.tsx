@@ -42,7 +42,7 @@ function MobileMenu( {close, showFullMenu} : {close:() => void, showFullMenu: bo
       <MobileMenuOption close={close} href="/catalog">Catalog</MobileMenuOption>
       <MobileMenuOption close={close} href="/support">Support</MobileMenuOption>
       <MobileMenuOption close={close} href="/sizeguide">Size Guide</MobileMenuOption>
-      <MobileMenuOption close={close} href="/">Login</MobileMenuOption>
+      <MobileMenuOption close={close} href="/login">Login</MobileMenuOption>
     </div>
   )
 }
